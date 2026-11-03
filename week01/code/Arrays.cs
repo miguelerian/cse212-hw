@@ -13,7 +13,21 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // Plan:
+        // 1. Create an array with the requested number of elements
+        // 2. Loop through each array index
+        // 3. Multiply the input number by (i + 1) to get each multiple
+        // 4. Store each result at the current index
+        // 5. Return the completed array
+
+        double[] multiples = new double[length];
+
+        for(int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
+
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +43,19 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Plan:
+        // 1. Calculate the starting index of the element to move
+        // 2. Copy the last'amount' elements into a temporary list
+        // 3. Remove those elements from the original list
+        // 4. Insert the saved elements at the beggining
+
+        int startIndex = data.Count - amount;
+
+        List<int> lastElements = data.GetRange(startIndex, amount);
+
+        data.RemoveRange(startIndex, amount);
+
+        data.InsertRange(0, lastElements);
     }
 }
